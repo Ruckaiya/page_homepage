@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');  
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.nav
+   {
+       width:100%;
+       background-color:purple;
+       position:fixed;
+       top:0;
+       left:0;
+   }
+
+   .nav .logo
+   {
+       display:flex;
+       width:200px;
+       flex-wrap:wrap;
+       justify-content: center;
+       align-items: center;
+       text-transform:uppercase;
+       cursor:pointer;
+       color: #fff;
+   }
+   .togg
+   {
+       position:absolute;
+       right:40px;
+       top:20px;
+       display:none;
+   }
+   .togg div {
+    width: 36px;
+    height: 2px;
+    background-color: red;
+    margin: 6px 0px;
+    position: relative;
+    transition:all .8s ease;
+}
+.togg.lijo div
+{
+    position:absolute;
+    transition:all .8s ease;
+}
+.togg.lijo div:nth-child(1){
+    transform: rotate(48deg);
+    top: 7px;
+    /* position: absolute; */
+    right: 0px;
+}
+.togg.lijo div:nth-child(2)
+{
+   
+    width:0px;
+    top: 7px;
+    /* position: absolute; */
+    right: 0px;
+}
+.togg.lijo div:nth-child(3)
+{
+    transform: rotate(-48deg);
+    top: 7px;
+    right: 0px;
+}
+   .nav ul.firstlevel
+   {
+       list-style:none;
+       width:calc(100% - 200px);
+       background-color: #fa8039;
+       margin-bottom:0px;
+       padding-left:0px;
+       text-align: right;
+       padding-right: 100px;
+   }
+   .nav ul.firstlevel li
+   {
+       display:inline-block;
+       margin-bottom:0px;
+       color:#000;
+       
+   }
+   
+   .nav ul.firstlevel li a
+   {
+       cursor:pointer;
+       display:block;
+       padding:15px;
+       transition:.8s ease;
+       text-decoration:none;
+       text-transform:uppercase;
+       color:#fff;
+   }
+   .nav ul.firstlevel li a:hover
+   {
+      text-decoration:none;
+   }
+   .nav ul.firstlevel li ul.sub li {
+    display: block;
+    background-color:rgba(6, 197, 255, 0.79);
+    text-align: left;
+}
+.nav ul.firstlevel li ul.sub li:hover {
+    display: block;
+    background-color:#fa8039;
+}
+.nav ul.firstlevel li ul.sub li a{
+    color:#fff;
+}
+.nav ul.firstlevel li ul.sub
+{
+    width:200px;
+    position:absolute;
+    padding-left:0px;
+    opacity:0;
+    visibility: hidden;
+    transform:translateY(30px);
+    transition:.5s linear;
+    padding-top:20px;
+}
+.nav ul.firstlevel li ul.sub:after {
+    content: '';
+    width: 41px;
+    height: 20px;
+    border-bottom: solid 18px rgba(6, 197, 255, 0.79);
+    border-left: solid 20px transparent;
+    border-right: solid 21px transparent;
+    top: 0px;
+    display: block;
+    position: absolute;
+    left: 16px;
+}
+@media(min-width:1024px)
+{
+    .nav ul.firstlevel li:hover ul.sub
+    {
+        visibility:visible;
+        opacity:1;
+        transform:translateY(0px);
+    } 
+    .nav ul.firstlevel li:hover
+   {
+       display:inline-block;
+       margin-bottom:0px;
+       background-color: rgba(27, 27, 27, 0.32);;
+       color:#fff !important;
+   }
+   .nav ul.firstlevel li:hover a
+   {
+       color:#fff !important;
+   }
+}
+   
+
+   @media(max-width:1024px)
+   {
+       .nav
+       {
+           min-height:50px;
+       }
+       .nav ul.firstlevel
+   {
+       text-align: left;
+       padding-right: 0px;
+   }
+    .togg
+   {
+       display:block;
+       top:10px;
+   }
+   .nav ul.firstlevel
+   {
+    position: absolute;
+    top: 50px;
+    transform: translateX(100%);
+    right: 0;
+    transition:.8s ease;
+    width:40%;
+    height: calc(100vh - 50px);
+   }
+   .nav ul.firstlevel li {
+    display: block;
+}
+.nav ul.firstlevel.surya {
+    transform: translateX(0%);
+}
+.nav ul.firstlevel li ul.sub
+{
+    opacity: 1;
+    visibility: visible;
+    display:none;
+    position:relative;
+    padding-top:0px;
+    width:100%;
+    transition:0s;
+    transform: translateY(0px);
+}
+.nav ul.firstlevel li ul.sub:after
+{
+    display:none;
+}
+   }
+
+#home {
+  background: none;
+  height: 100%;
+}
+
+#home-bg-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+#home-overlay {
+  background-color: rgba(216, 184, 184, 0.404);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#home-content {
+  width: 100%;
+  height: 100%;
+  display: table;
+  margin-top: 260px;
+  text-align: center;
+}
+
+#home-content-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#home-heading h1 {
+  color: #fff;
+  font-size: 66px;
+  font-weight: 700;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  /* display: inline-block; */
+}
+
+#home-heading span {
+  color: purple;
+  font-weight: 700;
+}
+
+#home-text p {
+  /* rgba(6, 197, 255, 0.79) */
+  color: purple;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 8px 0 30px 0;
+}
+
+a.btn-general {
+  font-family: tahoma;
+  border-radius: 28px;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 0 6px;
+  padding: 12px 46px 12px 46px;
+  transition: all 0.4s;
+  background-color: rgba(128, 0, 128, 0.575);
+  color: #fff;
+}
+
+.text_1 {
+  animation: text1;
+}
+
+.text_2 {
+  animation: text2;
+}
+
+.text_1, .text_2 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  animation-duration: 20s;
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+}
+
+.text_1::after, .text_2::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes text2 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  
+  60%, 90% {
+    width: 13.70em;
+  }
+}
+
+@keyframes text1 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  10%, 40% {
+    width: 11.30em;
+  }
+}
+
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media(max-width: 800px) {
+  #home-heading h1 {
+    font-size: 3rem;
+  }
+}
+
+@media(max-width: 500px) {
+  #home-heading h1 {
+    font-size: 2rem;
+  }
+
+@media(max-width: 500px) {
+  #home-heading h1 {
+    font-size: 1.5rem;
+  } 
+  #home-text p {
+    /* rgba(6, 197, 255, 0.79) */
+    color: purple;
+    font-size: 15px;  
+  } 
+  
+
+  a.btn-general {
+    border-radius: 24px;
+    font-size: 14px;
+    padding: 10px 28px;
+    
+  }
+}
